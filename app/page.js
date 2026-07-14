@@ -6,104 +6,122 @@ import Image from "next/image";
 /* ─── Data ─── */
 const SKILLS = {
   expertise: [
-    "Web Development",
-    "Android App Dev",
-    "Data Structures & Algorithms",
-    "Object-Oriented Programming",
-    "Database Design & Modelling",
+    "Enterprise Software Architecture",
+    "Generative AI (LLMs & RAG)",
+    "Backend Microservices",
     "Distributed Systems",
-    "RESTful APIs",
-    "System Design",
-    "SQL Optimization",
-    "CI/CD",
-    "AWS",
+    "TCP/IP & OS Concepts",
+    "Cloud Computing & CI/CD",
+    "Database Optimization",
+    "REST/gRPC APIs",
   ],
-  languages: ["C++", "Python", "Java", "JavaScript", "R", "C#", "Go"],
+  languages: ["C/C++", "Go (Golang)", "Python", "JavaScript", "TypeScript", "Java", "SQL"],
   tools: [
-    "React",
+    "FastAPI",
+    "React Native",
     "Next.js",
     "Node.js",
-    "React Native",
-    "Flask",
     "Docker",
     "Kubernetes",
-    "Django",
-    "SQL",
-    "Selenium",
-    ".NET",
-    "Google Cloud",
-    "Git / GitHub",
+    "PostgreSQL",
+    "Redis",
+    "Kafka",
+    "LangChain",
+    "VectorDBs (Chroma)",
+    "Linux / POSIX",
+    "AWS",
   ],
 };
 
+const EXPERIENCE = [
+  {
+    role: "Full Stack Software Engineer (Part Time)",
+    company: "Hostiggo",
+    period: "Jan 2026 – Jun 2026",
+    desc: "Developed a scalable SaaS platform across a Next.js web portal and React Native app, handling 5,000+ concurrent requests. Architected a Go (Gin) & PostgreSQL microservice syncing 10,000+ monthly events with Redis-based caching, reducing latency by 40%.",
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "CoRE Stack",
+    period: "Feb 2026 – May 2026",
+    desc: "Constructed a highly scalable data analytics platform utilizing FastAPI and React.js. Shifted 100% of data computation to the client-side via WebAssembly to eliminate backend processing overhead, decreasing rendering time by 50%.",
+  },
+  {
+    role: "Software Engineer",
+    company: "RegGenLab IIIT Delhi",
+    period: "Jan 2026 – Present",
+    desc: "Built a comprehensive enterprise collaboration suite powering LLM-driven Chatbots with RAG. Deployed resource-heavy backend tools using Docker containers behind an Apache Reverse Proxy, ensuring 99.9% high-availability.",
+  },
+];
+
 const PROJECTS = [
   {
-    icon: "🎬",
-    name: "AniVerse",
-    subtitle: "Cloud-Native Anime Streaming",
-    desc: "Full-stack streaming system (Next.js + PostgreSQL) deployed on Vercel with 40% faster SQL queries, scalable APIs, and robust error handling.",
-    tags: ["Next.js", "PostgreSQL", "Vercel", "REST API"],
-    team: 2,
-    period: "Jan '25 – Apr '25",
-    link: "https://ani-verse-one.vercel.app/",
-  },
-  {
     icon: "🧠",
-    name: "Distributed Collaboration Platform",
-    subtitle: "Real-Time Document Editing",
-    desc: "Production-grade platform with real-time document editing and per-user isolated Jupyter execution, secured via Apache reverse proxy.",
-    tags: ["Distributed Systems", "Jupyter", "Apache", "Docker"],
+    name: "Scout",
+    subtitle: "AI Smart Assistant & Enterprise Data Platform",
+    desc: "Production-grade AI platform with FastAPI & LangGraph translating natural language to SQL (95% accuracy). Designed a 9-node self-correcting agent pipeline utilizing LLMs & Vector Search.",
+    tags: ["FastAPI", "LangGraph", "ChromaDB", "LLMs"],
+    team: 4,
+    period: "Mar '26",
+    link: "https://github.com/Aayushgupta2005/Scout",
+  },
+  {
+    icon: "⚡",
+    name: "Health-Aware TCP Load Balancer",
+    subtitle: "High-Throughput Network Router",
+    desc: "Multithreaded C++ TCP load balancer using POSIX threads. Engineered active health-check cycles and resolved race conditions via mutex locks, preventing server crashes.",
+    tags: ["C++", "TCP/IP", "POSIX Threads", "Networking"],
     team: 1,
-    period: "Jan '26 – Present",
-    link: "#",
+    period: "Nov '25 – Dec '25",
+    link: "https://github.com/AamanPrime/LoadBalancer-Computer-Networking",
   },
   {
-    icon: "🕹️",
-    name: "Angry Birds Clone",
-    subtitle: "Java LibGDX Game",
-    desc: "Real-time physics, collision detection, and trajectory algorithms at 60 FPS with 50+ concurrent objects. Full test suite with JUnit.",
-    tags: ["Java", "LibGDX", "Physics", "JUnit"],
-    team: 2,
-    period: "Sep '24 – Nov '24",
-    link: "#",
-  },
-  {
-    icon: "🏫",
-    name: "CIPD 360",
-    subtitle: "Academic ERP System",
-    desc: "Scalable ERP handling scheduling, automated Wi-Fi attendance, analytics dashboards, role-based access control, and audit mechanisms.",
-    tags: ["ERP", "Full-Stack", "RBAC", "Analytics"],
-    team: 5,
-    period: "Jan '26 – Present",
-    link: "#",
-  },
-  {
-    icon: "🔐",
-    name: "BedRock Password Manager",
-    subtitle: "Android Security App",
-    desc: "Secure Android application with encrypted credential storage and authentication mechanisms focused on data privacy.",
-    tags: ["Android", "Encryption", "Java", "Security"],
+    icon: "📱",
+    name: "BedRock",
+    subtitle: "Secure Android Mobile App",
+    desc: "Cross-platform React Native app implementing robust mobile SW architecture optimized for 60 FPS. Secured an encrypted credential vault handling zero-latency CRUD operations.",
+    tags: ["React Native", "Android", "Security", "Crypto"],
     team: 5,
     period: "Aug '25 – Dec '25",
-    link: "#",
+    link: "https://github.com/nipunagg2604/BedRock",
   },
   {
-    icon: "🤖",
-    name: "AI Gmail → Calendar",
-    subtitle: "NLP Automation Pipeline",
-    desc: "NLP pipeline using Python & Google LLM to extract structured event data from unstructured emails, automating scheduling workflows.",
-    tags: ["Python", "NLP", "Google LLM", "Automation"],
+    icon: "💻",
+    name: "Unix Shell & Process Manager",
+    subtitle: "Concurrent OS Implementation",
+    desc: "Custom Linux shell in C parsing 100+ concurrent commands, I/O redirection, and IPC. Eliminated deadlocks via POSIX mutex locks and atomic synchronization primitives.",
+    tags: ["C", "Linux", "OS Concepts", "Concurrency"],
+    team: 1,
+    period: "Sep '24 – Nov '24",
+    link: "https://github.com/AamanPrime/SimpleShell",
+  },
+  {
+    icon: "🏢",
+    name: "CIPD 360",
+    subtitle: "Academic ERP System",
+    desc: "Spearheaded an organizational ERP with Python/Nmap services, applying TCP/IP fundamentals to successfully process 5,000+ daily user telemetry records.",
+    tags: ["Python", "ERP", "Networking", "Full-Stack"],
+    team: 4,
+    period: "Jan '26 – Present",
+    link: "https://cipd-erp-ic24.vercel.app/",
+  },
+  {
+    icon: "📈",
+    name: "Financial Intelligence Pipeline",
+    subtitle: "Real-Time ETL Data Scraper",
+    desc: "Architected a Python-based automated ETL data pipeline to execute real-time scraping, parsing, and transformation of unstructured financial feeds from third-party sources.",
+    tags: ["Python", "ETL", "Data Engineering", "Cron"],
     team: 1,
     period: "Jun '25 – Aug '25",
-    link: "#",
+    link: "https://github.com/AamanPrime/financial-news-intelligence",
   },
 ];
 
 const ROLES = [
   {
     icon: "🔬",
-    title: "Software Developer",
-    org: "Reggen Lab, IIITD",
+    title: "Software Developer & Researcher",
+    org: "ReggenLab, IIITD",
     period: "Jan '26 – Present",
   },
   {
@@ -114,27 +132,17 @@ const ROLES = [
   },
   {
     icon: "💻",
-    title: "Web Developer",
+    title: "Web Developer & PR Lead",
     org: "BYLD, IIITD",
-    period: "Jan '24 – Present",
-  },
-  {
-    icon: "📢",
-    title: "Content & PR Lead",
-    org: "BYLD, IIITD",
-    period: "Jul '24 – Jan '25",
+    period: "Jan '24 – Dec '25",
   },
 ];
 
 const ACHIEVEMENTS = [
-  { icon: "🏆", text: "350+ LeetCode Questions Solved" },
-  { icon: "📜", text: "HackerRank Problem Solver Certified" },
-  { icon: "⚡", text: "Codeforces Rating: 1300+" },
-  { icon: "🎮", text: "Certified in Game Dev with Unreal Engine" },
-  {
-    icon: "🚀",
-    text: "Multiple full-stack & system-level projects with active GitHub repos",
-  },
+  { icon: "🏆", text: "Peak Codeforces Rating of 1703 (Expert Tier)" },
+  { icon: "⚡", text: "Solved 350+ Data Structure and Algorithm problems on LeetCode" },
+  { icon: "📜", text: "HackerRank Certified in Data Structures and Algorithms" },
+  { icon: "🎮", text: "Certified in Game Development with Unreal Engine" },
 ];
 
 const NAV_ITEMS = [
@@ -147,9 +155,9 @@ const NAV_ITEMS = [
 ];
 
 const TYPED_TITLES = [
-  "Full-Stack Developer",
   "Software Engineer",
-  "Cloud-Native Builder",
+  "AI & Systems Architect",
+  "Backend Developer",
   "Distributed Systems Enthusiast",
 ];
 
@@ -268,9 +276,7 @@ function HeroSection() {
             <span className="typed-text">{typedText}</span>
           </h2>
           <p className="hero-description">
-            B.Tech CSE student at IIIT Delhi crafting scalable web applications,
-            distributed systems, and cloud-native solutions. Passionate about
-            building software that makes a difference.
+            B.Tech CSE student at IIIT Delhi building high-performance backend systems, enterprise AI platforms, and scalable web architectures. Passionate about C++ systems, Golang microservices, and solving complex engineering problems.
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn-primary">
@@ -282,7 +288,7 @@ function HeroSection() {
           </div>
           <div className="hero-social">
             <a
-              href="https://github.com/aamanprime"
+              href="https://github.com/AamanPrime"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
@@ -291,7 +297,7 @@ function HeroSection() {
               ⌥
             </a>
             <a
-              href="https://linkedin.com/in/aamanprime"
+              href="https://www.linkedin.com/in/aaman-sheikh-6b1361287"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
@@ -300,13 +306,22 @@ function HeroSection() {
               in
             </a>
             <a
-              href="https://leetcode.com/aamanprime"
+              href="https://leetcode.com/u/aamanprime/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
               aria-label="LeetCode"
             >
               LC
+            </a>
+            <a
+              href="https://codeforces.com/profile/_atos_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+              aria-label="Codeforces"
+            >
+              CF
             </a>
           </div>
         </div>
@@ -322,9 +337,9 @@ function HeroSection() {
               priority
             />
             <span className="avatar-badge">✦ Open to Work</span>
-            <span className="floating-tech">⚛ React</span>
+            <span className="floating-tech">⚡ Go</span>
             <span className="floating-tech">🐳 Docker</span>
-            <span className="floating-tech">☸ K8s</span>
+            <span className="floating-tech">🤖 AI/RAG</span>
           </div>
         </div>
       </div>
@@ -338,10 +353,10 @@ function StatsBar() {
   return (
     <div className="stats-bar" ref={ref}>
       {[
+        { number: "1703", label: "Peak CF Rating" },
         { number: "350+", label: "LeetCode Solved" },
-        { number: "10+", label: "Projects Built" },
-        { number: "7", label: "Languages" },
-        { number: "1300+", label: "CF Rating" },
+        { number: "10+", label: "Systems Built" },
+        { number: "8", label: "Languages" },
       ].map((stat, i) => (
         <div
           key={stat.label}
@@ -379,21 +394,21 @@ function AboutSection() {
               <div className="about-info-icon">🎓</div>
               <div>
                 <div className="about-info-label">University</div>
-                <div className="about-info-value">IIIT Delhi</div>
+                <div className="about-info-value">IIIT Delhi (CSE)</div>
               </div>
             </li>
             <li className="about-info-item">
               <div className="about-info-icon">💼</div>
               <div>
-                <div className="about-info-label">Current Role</div>
-                <div className="about-info-value">SWE Intern @ Hostiggo</div>
+                <div className="about-info-label">Current Roles</div>
+                <div className="about-info-value">SWE @ Hostiggo & RegGenLab</div>
               </div>
             </li>
             <li className="about-info-item">
-              <div className="about-info-icon">📅</div>
+              <div className="about-info-icon">💻</div>
               <div>
-                <div className="about-info-label">Born</div>
-                <div className="about-info-value">August 5, 2004</div>
+                <div className="about-info-label">Algorithms</div>
+                <div className="about-info-value">Codeforces Expert (1703)</div>
               </div>
             </li>
             <li className="about-info-item">
@@ -407,35 +422,27 @@ function AboutSection() {
         </div>
         <div className="about-text">
           <p>
-            I&apos;m <span className="about-highlight">Aaman Sheikh</span>, a third-year
+            I&apos;m <span className="about-highlight">Aaman Sheikh</span>, a pre-final year
             Computer Science undergraduate at{" "}
             <span className="about-highlight">
-              Indraprastha Institute of Information Technology, Delhi
+              Indraprastha Institute of Information Technology, Delhi (IIITD)
             </span>
-            . My journey in tech is fueled by a deep curiosity for how things
-            work at scale.
+            . My engineering journey is driven by an obsession with scalable architectures, low-level system design, and competitive programming.
           </p>
           <p>
-            Currently interning as a{" "}
-            <span className="about-highlight">Software Engineer at Hostiggo</span>,
-            where I develop scalable web and Android features for a travel
-            platform. I specialize in crafting performant APIs, responsive
-            interfaces, and reliable backend architectures.
+            Currently, I work as a{" "}
+            <span className="about-highlight">Software Engineer at Hostiggo</span> and a researcher at{" "}
+            <span className="about-highlight">RegGenLab</span>, building everything from Golang-based synchronization microservices to Dockerized enterprise LLM platforms with Retrieval-Augmented Generation (RAG).
           </p>
           <p>
-            Beyond academics, I&apos;m an active contributor at{" "}
-            <span className="about-highlight">Reggen Lab</span> and{" "}
-            <span className="about-highlight">CiPD IIITD</span>, working on
-            cutting-edge research and product development. I believe in writing
-            clean, maintainable code and building systems that stand the test of
-            scale.
+            I thrive at the intersection of hardcore systems engineering and modern product development. Whether it&apos;s writing a C++ multithreaded TCP load balancer with POSIX mutex locks, or deploying a fluid React Native app, I believe in writing robust, highly concurrent code that performs under pressure.
           </p>
           <p>
-            When I&apos;m not coding, you&apos;ll find me diving deep into{" "}
+            Beyond building systems, I am a highly active competitive programmer with an{" "}
             <span className="about-highlight">
-              distributed systems architecture
-            </span>{" "}
-            and exploring large-scale software design patterns.
+              Expert rating (1703) on Codeforces
+            </span>
+            , constantly refining my algorithmic intuition to tackle complex data problems.
           </p>
         </div>
       </div>
@@ -501,20 +508,17 @@ function ExperienceSection() {
         <div className="section-divider" />
       </div>
       <div className={`timeline animate-on-scroll ${isVisible ? "visible" : ""}`}>
-        <div className="timeline-item">
-          <div className="timeline-dot" />
-          <div className="timeline-card">
-            <div className="timeline-date">Jan 2026 – Present</div>
-            <h3 className="timeline-title">Software Engineer Intern</h3>
-            <div className="timeline-company">Hostiggo</div>
-            <p className="timeline-desc">
-              Developing scalable web and Android features for a travel platform
-              connecting users with verified homestays. Optimizing API
-              performance, improving UI responsiveness, and ensuring reliable
-              integration of backend services.
-            </p>
+        {EXPERIENCE.map((exp, index) => (
+          <div key={index} className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-card">
+              <div className="timeline-date">{exp.period}</div>
+              <h3 className="timeline-title">{exp.role}</h3>
+              <div className="timeline-company">{exp.company}</div>
+              <p className="timeline-desc">{exp.desc}</p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
@@ -530,7 +534,7 @@ function ProjectsSection() {
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
           A selection of projects showcasing my passion for building scalable,
-          performant, and user-centric software.
+          performant, and complex distributed software.
         </p>
         <div className="section-divider" />
       </div>
@@ -542,6 +546,7 @@ function ProjectsSection() {
           >
             <div className="project-icon">{project.icon}</div>
             <h3 className="project-name">{project.name}</h3>
+            <p className="project-subtitle">{project.subtitle}</p>
             <p className="project-desc">{project.desc}</p>
             <div className="project-tags">
               {project.tags.map((tag) => (
@@ -556,7 +561,7 @@ function ProjectsSection() {
               </span>
               {project.link !== "#" && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                  Live Demo →
+                  GitHub / Live →
                 </a>
               )}
             </div>
@@ -585,6 +590,7 @@ function EducationSection() {
             institution: "IIIT Delhi",
             degree: "B.Tech — Computer Science & Engineering",
             year: "2023 – Present",
+            cgpa: "CGPA: 7.38",
           },
           {
             badge: "completed",
@@ -592,6 +598,7 @@ function EducationSection() {
             institution: "Balwantrai Mehta Vidya Bhawan",
             degree: "CBSE Class XII — PCM",
             year: "2022 – 2023",
+            cgpa: "88%",
           },
           {
             badge: "completed",
@@ -599,6 +606,7 @@ function EducationSection() {
             institution: "Govt. Boys Sr. Sec. School No.3",
             degree: "CBSE Class X",
             year: "2020 – 2021",
+            cgpa: "80%",
           },
         ].map((edu, i) => (
           <div
@@ -610,6 +618,7 @@ function EducationSection() {
             <p className="edu-degree">{edu.degree}</p>
             <div className="edu-details">
               <span className="edu-year">{edu.year}</span>
+              <span className="edu-score" style={{color: "var(--accent-primary)", fontSize: "0.85rem", fontWeight: "bold"}}>{edu.cgpa}</span>
             </div>
           </div>
         ))}
@@ -681,8 +690,7 @@ function ContactSection() {
         <p className="section-label">// Let&apos;s Connect</p>
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
-          I&apos;m always open to discussing new projects, collaboration opportunities,
-          or just having a chat about tech.
+          I&apos;m always open to discussing new engineering projects, software architecture, or career opportunities.
         </p>
         <div className="section-divider" />
       </div>
@@ -693,7 +701,7 @@ function ContactSection() {
           </a>
           <div className="contact-links">
             <a
-              href="https://github.com/aamanprime"
+              href="https://github.com/AamanPrime"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link-btn"
@@ -701,7 +709,7 @@ function ContactSection() {
               ⌥ GitHub
             </a>
             <a
-              href="https://linkedin.com/in/aamanprime"
+              href="https://www.linkedin.com/in/aaman-sheikh-6b1361287"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link-btn"
@@ -709,7 +717,7 @@ function ContactSection() {
               in LinkedIn
             </a>
             <a
-              href="https://leetcode.com/aamanprime"
+              href="https://leetcode.com/u/aamanprime/"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link-btn"
@@ -717,7 +725,7 @@ function ContactSection() {
               ⚡ LeetCode
             </a>
             <a
-              href="https://codeforces.com/profile/aamanprime"
+              href="https://codeforces.com/profile/_atos_"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link-btn"
@@ -778,3 +786,4 @@ export default function HomePage() {
     </>
   );
 }
+
